@@ -641,7 +641,7 @@ input, select, textarea {
 		outline: 0;
 		padding: 0 0.75rem;
 		text-decoration: none;
-		width: 100%;
+		width: 60%;
 	}
 
 		input[type="text"]:invalid,
@@ -3490,7 +3490,8 @@ input, select, textarea {
 		@media screen and (orientation: portrait) {
 
 			#page-wrapper {
-				padding-left: 2rem;
+				/* edited */
+				padding-left: 0rem;
 				padding-right: 2rem;
 			}
 

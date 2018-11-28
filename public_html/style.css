@@ -1,17 +1,18 @@
-#lug-id {
-    margin-left: -40rem;
-}
-
 #first-panel-left {
     min-width: 0rem;
 }
 
 #second-slide {
-    width: 35rem;
+    width: 40rem;
 }
 
 #last-slide {
     min-width: 0rem;
+}
+
+#contact-info {
+    padding: 2rem;
+    width: 20rem;
 }
 
 /* chartdiv css */
@@ -19,13 +20,13 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
   
-  #chartdiv {
-    width: 100%;
-    height: 500px;
-    background-color: white;
-  }
+#chartdiv {
+width: 100%;
+height: 500px;
+background-color: white;
+}
 
 #chartsize {
-    width: 35rem;
+    width: 38rem;
     padding: 2rem;
 }
