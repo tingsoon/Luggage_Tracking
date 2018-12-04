@@ -8,8 +8,8 @@ chart.geodata = am4geodata_worldLow;
 chart.projection = new am4maps.projections.Miller();
 chart.homeZoomLevel = 2;
 chart.homeGeoPoint = {
-    latitude: 38,
-    longitude: -60
+    latitude: 25,
+    longitude: 51
 };
 
 // Create map polygon series
@@ -36,10 +36,13 @@ function addCity(coords, title) {
     return city;
 }
 
-var paris = addCity({ "latitude": 48.8567, "longitude": 2.3510 }, "Paris");
-var toronto = addCity({ "latitude": 43.8163, "longitude": -79.4287 }, "Toronto");
-var la = addCity({ "latitude": 34.3, "longitude": -118.15 }, "Los Angeles");
-var havana = addCity({ "latitude": 23, "longitude": -82 }, "Havana");
+// var paris = addCity({ "latitude": 48.8567, "longitude": 2.3510 }, "Paris");
+// var toronto = addCity({ "latitude": 43.8163, "longitude": -79.4287 }, "Toronto");
+// var la = addCity({ "latitude": 34.3, "longitude": -118.15 }, "Los Angeles");
+// var havana = addCity({ "latitude": 23, "longitude": -82 }, "Havana");
+
+var london = addCity({ "latitude": 51.5002, "longitude": -0.1262 }, "London");
+var singapore = addCity({ "latitude": 1.2894, "longitude": 103.8500 }, "Singapore")
 
 // Add lines
 var lineSeries = chart.series.push(new am4maps.MapArcSeries());
@@ -67,9 +70,11 @@ function addLine(from, to) {
     return line;
 }
 
-addLine(paris, toronto);
-addLine(toronto, la);
-addLine(la, havana);
+// addLine(paris, toronto);
+// addLine(toronto, la);
+// addLine(la, havana);
+
+addLine(singapore, london)
 
 // Add plane
 var plane = lineSeries.mapLines.getIndex(0).lineObjects.create();
