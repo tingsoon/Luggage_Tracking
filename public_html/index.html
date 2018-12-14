@@ -22,6 +22,10 @@
 		<script src="https://www.amcharts.com/lib/4/maps.js"></script>
 		<script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
 		<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+		<!-- Amcharts 4
+		<script src="http://www.amcharts.com/lib/amcharts.js" type="text/javascript"></script> -->
+
 	</head>
 	<body class="is-preload">
 
@@ -105,6 +109,48 @@
                                         <li><a href="#fifth" class="button">Next</a></li>
 									</ul>
 									<div id="chartdiv"></div>
+									<br />
+									<div>
+										<button onclick="departureClick()">Departure</button>
+										<button onclick="arrivalClick()">Arrival</button>
+									</div>
+									<br />
+									<!-- table wrapper -->
+									<div class="table-wrapper" id="tableWrapper">
+										<table>
+											<thead id="tableHeader" style="display: none">
+												<tr>
+													<th>Location</th>
+													<th>Area</th>
+													<th>Image</th>
+												</tr>
+											</thead>
+											<tbody id="departureTable" style="display: none">
+												<tr>
+													<td>Singapore</td>
+													<td>Check in</td>
+													<td><div class="gallery"><a href="images/gallery/fulls/01.jpg"><span class="icon fa-image"></div></a></td>
+												</tr>
+												<tr>
+													<td>Singapore</td>
+													<td>Loading into aircraft</td>
+													<td><div class="gallery"><a href="images/gallery/fulls/02.jpg"><span class="icon fa-image"></div></a></td>
+												</tr>
+											</tbody>
+											<tbody id="arrivalTable" style="display: none">
+												<tr>
+													<td>London</td>
+													<td>Unloaded from aircraft</td>
+													<td><div class="gallery"><a href="images/gallery/fulls/03.jpg"><span class="icon fa-image"></div></a></td>
+												</tr>
+												<tr>
+													<td>London</td>
+													<td>After Customs</td>
+													<td><div class="gallery"><a href="images/gallery/fulls/04.jpg"><span class="icon fa-image"></div></a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
 								</div>
 								<!-- <div class="inner">
 									<div class="span-5">
@@ -176,6 +222,8 @@
 
 		<!-- map script  -->
 			<script src="./map.js"></script>
+		<!-- button script -->
+			<script src="./button.js"></script>
 
 	</body>
 </html>

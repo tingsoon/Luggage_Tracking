@@ -12,11 +12,35 @@ chart.homeGeoPoint = {
     longitude: 51
 };
 
+// Home & zooming buttons
+chart.zoomControl = new am4maps.ZoomControl();
+
+var homeButton = new am4core.Button();
+homeButton.events.on("hit", function(){
+  chart.goHome();
+});
+
+homeButton.icon = new am4core.Sprite();
+homeButton.padding(7, 5, 7, 5);
+homeButton.width = 20;
+homeButton.icon.path = "M16,8 L14,8 L14,16 L10,16 L10,10 L6,10 L6,16 L2,16 L2,8 L0,8 L8,0 L16,8 Z M16,8";
+homeButton.marginBottom = 10;
+homeButton.parent = chart.zoomControl;
+homeButton.insertBefore(chart.zoomControl.plusButton);
+
+// Creating city buttons
+var singaporeButton = new am4core.Button();
+singaporeButton.events.on("hit", function() {
+    console.log("hello world!");
+})
+
+
 // Create map polygon series
 var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
 polygonSeries.useGeodata = true;
 polygonSeries.mapPolygons.template.fill = chart.colors.getIndex(0).lighten(0.5);
 polygonSeries.exclude = ["AQ"];
+
 
 // Add line bullets
 var cities = chart.series.push(new am4maps.MapImageSeries());
@@ -41,8 +65,10 @@ function addCity(coords, title) {
 // var la = addCity({ "latitude": 34.3, "longitude": -118.15 }, "Los Angeles");
 // var havana = addCity({ "latitude": 23, "longitude": -82 }, "Havana");
 
+
+
 var london = addCity({ "latitude": 51.5002, "longitude": -0.1262 }, "London");
-var singapore = addCity({ "latitude": 1.2894, "longitude": 103.8500 }, "Singapore")
+var singapore = addCity({ "latitude": 1.2894, "longitude": 103.8500 }, "Singapore");
 
 // Add lines
 var lineSeries = chart.series.push(new am4maps.MapArcSeries());
@@ -178,3 +204,4 @@ function flyPlane() {
 
 // Go!
 flyPlane();
+
