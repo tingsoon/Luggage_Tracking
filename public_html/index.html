@@ -26,6 +26,9 @@
 		<!-- Amcharts 4
 		<script src="http://www.amcharts.com/lib/amcharts.js" type="text/javascript"></script> -->
 
+		<!-- jquery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 	</head>
 	<body class="is-preload">
 
@@ -111,21 +114,21 @@
 									<div id="chartdiv"></div>
 									<br />
 									<div>
-										<button onclick="departureClick()">Departure</button>
-										<button onclick="arrivalClick()">Arrival</button>
+										<button id="submitDeparture">Departure</button>
+										<button id="submitArrival">Arrival</button>
 									</div>
 									<br />
 									<!-- table wrapper -->
-									<div class="table-wrapper" id="tableWrapper">
-										<table>
-											<thead id="tableHeader" style="display: none">
+									<div class="table-wrapper">
+										<table id="containerTableDeparture">
+											<thead>
 												<tr>
 													<th>Location</th>
 													<th>Area</th>
 													<th>Image</th>
 												</tr>
 											</thead>
-											<tbody id="departureTable" style="display: none">
+											<tbody>
 												<tr>
 													<td>Singapore</td>
 													<td>Check in</td>
@@ -137,7 +140,16 @@
 													<td><div class="gallery"><a href="images/gallery/fulls/02.jpg"><span class="icon fa-image"></div></a></td>
 												</tr>
 											</tbody>
-											<tbody id="arrivalTable" style="display: none">
+										</table>
+										<table id="containerTableArrival">
+											<thead>
+													<tr>
+														<th>Location</th>
+														<th>Area</th>
+														<th>Image</th>
+													</tr>
+												</thead>
+											<tbody >
 												<tr>
 													<td>London</td>
 													<td>Unloaded from aircraft</td>

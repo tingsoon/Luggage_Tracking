@@ -1,27 +1,29 @@
-function departureClick() {
-    var tables = document.getElementById("departureTable");
-    var tableHeader = document.getElementById("tableHeader");
-    var tableRemove = document.getElementById("arrivalTable");
-    if (tables.style.display === "none") {
-        tables.style.display = "block";
-        tableHeader.style.display = "block";
-        tableRemove.style.display = "none";
-    } else {
-        tables.style.display = 'none';
-        tableHeader.style.display = "none";
+$('#submitDeparture').on('click', function() {
+    if ($('#containerTableDeparture').css('opacity') == 0) {
+        $('#containerTableDeparture').css('visibility', "visible");
+        $('#containerTableArrival').css('visibility', "hidden");
+        $('#containerTableDeparture').css('display', "block");
+        $('#containerTableDeparture').css('opacity', 1);
+        $('#containerTableArrival').css('opacity', 0);
     }
-}
+    else {
+        $('#containerTableDeparture').css('visibility', "hidden");
+        $('#containerTableDeparture').css('display', "none");
+        $('#containerTableDeparture').css('opacity', 0);
+    }
+});
 
-function arrivalClick() {
-    var tables = document.getElementById("arrivalTable");
-    var tableHeader = document.getElementById("tableHeader");
-    var tableRemove = document.getElementById("departureTable");
-    if (tables.style.display === "none") {
-        tables.style.display = "block"
-        tableHeader.style.display = "block";
-        tableRemove.style.display = "none";
-    } else {
-        tables.style.display = 'none';
-        tableHeader.style.display = "none";
+$('#submitArrival').on('click', function() {
+    if ($('#containerTableArrival').css('opacity') == 0) {
+        $('#containerTableArrival').css('visibility', "visible");
+        $('#containerTableDeparture').css('visibility', "hidden");
+        $('#containerTableDeparture').css('display', "none");
+        $('#containerTableArrival').css('opacity', 1);
+        $('#containerTableDeparture').css('opacity', 0);
     }
-}
+    else {
+        $('#containerTableArrival').css('visibility', "hidden");
+        $('#containerTableDeparture').css('display', "block");
+        $('#containerTableArrival').css('opacity', 0);
+    }
+});
